@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jonathan | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d9488; /* Professional Teal */
+            --dark: #0f172a;    /* Navy Dark */
+            --light: #f8fafc;   /* Soft Gray */
+            --accent: #38bdf8;  /* Sky Blue */
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 10%;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px rgba(0,0,0,0.05);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 2rem;
+            border-left: 3px solid var(--primary);
+            position: relative;
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            left: -9px;
+            top: 2rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            background: var(--dark);
+            color: white;
+            padding: 4rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for demo */
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">DR. JONATHAN</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Dr. Jonathan</span></h1>
+            <p>Internal Medicine Physician dedicated to patient-centered care and medical innovation.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>Professional Profile</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; color: #475569;">
+            <p>With over 8 years of clinical experience in high-pressure hospital environments, I specialize in chronic disease management, diagnostic excellence, and medical mentorship. My goal is to bridge the gap between complex medical data and compassionate patient care.</p>
+        </div>
+    </section>
+
+    <section id="skills" style="background: #f1f5f9;">
+        <div class="section-title">
+            <h2>Core Expertise</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <span class="skill-icon">🏥</span>
+                <h3>Internal Medicine</h3>
+                <p>Comprehensive adult healthcare and diagnostic services.</p>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">💻</span>
+                <h3>Medical Tech</h3>
+                <p>Expert in Epic, Cerner, and Telemedicine integrations.</p>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">📋</span>
+                <h3>Compliance</h3>
+                <p>Strict adherence to HIPAA and clinical safety protocols.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-title">
+            <h2>Experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Attending Physician</h3>
+                <p style="color: var(--primary);">Lone Star Medical Center | 2021 - Present</p>
+                <p>Leading clinical rounds and managing complex inpatient cases.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Resident Physician</h3>
+                <p style="color: var(--primary);">Baylor University Medical Center | 2018 - 2021</p>
+                <p>Completed intensive residency training in Internal Medicine.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-container">
+            <h2>Let's Connect</h2>
+            <p style="margin-bottom: 2rem;">Available for consultations and professional inquiries.</p>
+            <p><strong>Email:</strong> Dr.Jonathan@example.com</p>
+            <p><strong>Location:</strong> Peshawar, Pakistan</p>
+            <br>
+            <a href="mailto:Dr.Jonathan@example.com" class="btn">Send an Email</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Dr. Jonathan. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
